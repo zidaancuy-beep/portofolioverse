@@ -115,12 +115,11 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 /* ── MOONS ── */
 .moons-container { position: fixed; top: 0; width: 100%; pointer-events: none; z-index: 1; }
 .string-wrap { position: absolute; display: flex; flex-direction: column; align-items: center; top: 0; }
-.string { width: 1px; height: 80px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); }
-.moon { font-size: 1.6rem; animation: sway 4s ease-in-out infinite; transform-origin: top center; }
+.moon-svg { width: 30px; height: auto; animation: sway 4s ease-in-out infinite; transform-origin: 50% 0%; filter: drop-shadow(0 0 10px rgba(255,210,120,0.55)) drop-shadow(0 0 22px rgba(255,180,80,0.3)); }
 .moon-1 { animation-delay: 0s; }
 .moon-2 { animation-delay: 1.4s; }
 .moon-3 { animation-delay: 2.8s; }
-@keyframes sway { 0%,100% { transform: rotate(-12deg); } 50% { transform: rotate(12deg); } }
+@keyframes sway { 0%,100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
 
 /* ── NAVBAR ── */
 .navbar {
@@ -583,8 +582,15 @@ section { position: relative; z-index: 2; padding: 5rem 2rem; }
 .feature-card:hover::before { opacity: 1; }
 
 /* Moon bigger & more alive */
-.string { height: 110px !important; }
-.moon { font-size: 2rem !important; }
+.moon-svg { width: 58px !important; height: 155px !important; }
+
+@media (max-width: 768px) {
+  .hero { padding-top: 9rem; }
+  .hero-badge { margin-top: 0.5rem; }
+}
+@media (max-width: 600px) {
+  .hero { padding-top: 8.5rem; }
+}
 
 /* Tpl cover position */
 /* .tpl-cover position is already set in main CSS */
@@ -764,9 +770,9 @@ section { position: relative; z-index: 2; padding: 5rem 2rem; }
 <div class="bg-corner bg-corner-tr"></div>
 
 <div class="moons-container">
-  <div class="string-wrap" style="left:12%"><div class="string"></div><div class="moon moon-1">🌙</div></div>
-  <div class="string-wrap" style="left:50%;transform:translateX(-50%)"><div class="string"></div><div class="moon moon-2">🌙</div></div>
-  <div class="string-wrap" style="right:12%"><div class="string"></div><div class="moon moon-3">🌙</div></div>
+  <div class="string-wrap" style="left:12%"><svg class="moon-svg moon-1" viewBox="0 0 60 170" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff6d8"/><stop offset="55%" stop-color="#ffd97a"/><stop offset="100%" stop-color="#f5a623"/></linearGradient><radialGradient id="ms1" cx="32%" cy="32%" r="52%"><stop offset="0%" stop-color="#fffdf0" stop-opacity="0.85"/><stop offset="100%" stop-color="#ffd97a" stop-opacity="0"/></radialGradient><mask id="msk1"><circle cx="30" cy="138" r="26" fill="white"/><circle cx="44" cy="131" r="22" fill="black"/></mask></defs><path d="M30 0 Q28 50 29 115" stroke="url(#mg1)" stroke-width="1.3" fill="none" opacity="0.8" stroke-linecap="round"/><circle cx="30" cy="138" r="26" fill="url(#mg1)" mask="url(#msk1)"/><circle cx="30" cy="138" r="26" fill="url(#ms1)" mask="url(#msk1)" opacity="0.6"/><circle cx="16" cy="133" r="1.8" fill="#c87a10" opacity="0.2" mask="url(#msk1)"/><circle cx="12" cy="145" r="1.3" fill="#c87a10" opacity="0.15" mask="url(#msk1)"/><circle cx="20" cy="155" r="1.5" fill="#c87a10" opacity="0.18" mask="url(#msk1)"/></svg></div>
+  <div class="string-wrap" style="left:50%;transform:translateX(-50%)"><svg class="moon-svg moon-2" viewBox="0 0 60 170" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff6d8"/><stop offset="55%" stop-color="#ffd97a"/><stop offset="100%" stop-color="#f5a623"/></linearGradient><radialGradient id="ms2" cx="32%" cy="32%" r="52%"><stop offset="0%" stop-color="#fffdf0" stop-opacity="0.85"/><stop offset="100%" stop-color="#ffd97a" stop-opacity="0"/></radialGradient><mask id="msk2"><circle cx="30" cy="138" r="26" fill="white"/><circle cx="44" cy="131" r="22" fill="black"/></mask></defs><path d="M30 0 Q28 50 29 115" stroke="url(#mg2)" stroke-width="1.3" fill="none" opacity="0.8" stroke-linecap="round"/><circle cx="30" cy="138" r="26" fill="url(#mg2)" mask="url(#msk2)"/><circle cx="30" cy="138" r="26" fill="url(#ms2)" mask="url(#msk2)" opacity="0.6"/><circle cx="16" cy="133" r="1.8" fill="#c87a10" opacity="0.2" mask="url(#msk2)"/><circle cx="12" cy="145" r="1.3" fill="#c87a10" opacity="0.15" mask="url(#msk2)"/><circle cx="20" cy="155" r="1.5" fill="#c87a10" opacity="0.18" mask="url(#msk2)"/></svg></div>
+  <div class="string-wrap" style="right:12%"><svg class="moon-svg moon-3" viewBox="0 0 60 170" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mg3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff6d8"/><stop offset="55%" stop-color="#ffd97a"/><stop offset="100%" stop-color="#f5a623"/></linearGradient><radialGradient id="ms3" cx="32%" cy="32%" r="52%"><stop offset="0%" stop-color="#fffdf0" stop-opacity="0.85"/><stop offset="100%" stop-color="#ffd97a" stop-opacity="0"/></radialGradient><mask id="msk3"><circle cx="30" cy="138" r="26" fill="white"/><circle cx="44" cy="131" r="22" fill="black"/></mask></defs><path d="M30 0 Q28 50 29 115" stroke="url(#mg3)" stroke-width="1.3" fill="none" opacity="0.8" stroke-linecap="round"/><circle cx="30" cy="138" r="26" fill="url(#mg3)" mask="url(#msk3)"/><circle cx="30" cy="138" r="26" fill="url(#ms3)" mask="url(#msk3)" opacity="0.6"/><circle cx="16" cy="133" r="1.8" fill="#c87a10" opacity="0.2" mask="url(#msk3)"/><circle cx="12" cy="145" r="1.3" fill="#c87a10" opacity="0.15" mask="url(#msk3)"/><circle cx="20" cy="155" r="1.5" fill="#c87a10" opacity="0.18" mask="url(#msk3)"/></svg></div>
 </div>
 
 <nav class="navbar" id="navbar">
@@ -1199,7 +1205,7 @@ const TEMPLATES = [
    cover:{bg:"linear-gradient(135deg,#000510,#1a0a3a)",ac:"#4fc3f7",tc:"#d0e8ff",layout:"orbit"}},
   {id:4,name:"Stardust Gold",category:"cosmic",emoji:"⭐",font:"Cinzel",
    bg:"linear-gradient(135deg,#0a0800,#1a1400,#2a1e00)",accent:"#f59e0b",accent2:"#d97706",text:"#fff8e0",
-   cover:{bg:"linear-gradient(135deg,#0a0800,#2a1e00)",ac:"#f59e0b",tc:"#fff8e0",layout:"centered-badge"}},
+   cover:{bg:"linear-gradient(135deg,#0a0800,#2a1e00)",ac:"#f59e0b",tc:"#fff8e0",layout:"radial-burst"}},
   {id:5,name:"Aurora Borealis",category:"cosmic",emoji:"🌈",font:"Space Grotesk",
    bg:"linear-gradient(135deg,#001a20,#002a30,#003a20)",accent:"#00e5ff",accent2:"#69ff47",text:"#e0fff8",
    cover:{bg:"linear-gradient(135deg,#001a20,#003a20)",ac:"#00e5ff",tc:"#e0fff8",layout:"minimal-line"}},
@@ -1279,7 +1285,7 @@ const TEMPLATES = [
    cover:{bg:"linear-gradient(135deg,#050510,#0f0f28)",ac:"#f0ff00",tc:"#fffff0",layout:"glitch-lines"}},
   {id:30,name:"VR World",category:"tech",emoji:"🥽",font:"Orbitron",
    bg:"linear-gradient(135deg,#060015,#0e0030,#150045)",accent:"#c084fc",accent2:"#a855f7",text:"#eed0ff",
-   cover:{bg:"linear-gradient(135deg,#060015,#150045)",ac:"#c084fc",tc:"#eed0ff",layout:"holo"}},
+   cover:{bg:"linear-gradient(135deg,#060015,#150045)",ac:"#c084fc",tc:"#eed0ff",layout:"dark-glass"}},
   // ── MINIMAL (31-40) ──
   {id:31,name:"Pure White",category:"minimal",emoji:"🎯",font:"Inter",
    bg:"linear-gradient(135deg,#ffffff,#f8f8f8)",accent:"#1a1a2e",accent2:"#333",text:"#1a1a2e",
@@ -1298,7 +1304,7 @@ const TEMPLATES = [
    cover:{bg:"linear-gradient(135deg,#ffffff,#f5f5f5)",ac:"#ef4444",tc:"#111111",dark:true,layout:"swiss"}},
   {id:36,name:"Nordic Cool",category:"minimal",emoji:"🏔️",font:"Space Grotesk",
    bg:"linear-gradient(135deg,#eceff4,#e5e9f0)",accent:"#5e81ac",accent2:"#4c6fa5",text:"#2e3440",
-   cover:{bg:"linear-gradient(135deg,#eceff4,#e5e9f0)",ac:"#5e81ac",tc:"#2e3440",dark:true,layout:"elegant-top"}},
+   cover:{bg:"linear-gradient(135deg,#eceff4,#e5e9f0)",ac:"#5e81ac",tc:"#2e3440",dark:true,layout:"arc-header"}},
   {id:37,name:"Warm Sand",category:"minimal",emoji:"🏖️",font:"Cormorant Garamond",
    bg:"linear-gradient(135deg,#faf5ec,#f5ede0)",accent:"#92400e",accent2:"#78350f",text:"#1c1917",
    cover:{bg:"linear-gradient(135deg,#faf5ec,#f5ede0)",ac:"#92400e",tc:"#1c1917",dark:true,layout:"serif-editorial"}},
@@ -1338,7 +1344,7 @@ const TEMPLATES = [
    cover:{bg:"linear-gradient(135deg,#0a0808,#1e1515)",ac:"#c9a84c",tc:"#f0e6c8",layout:"deco"}},
   {id:49,name:"Victorian",category:"vintage",emoji:"🎩",font:"Cormorant Garamond",
    bg:"linear-gradient(135deg,#1a0f18,#2a1828,#351e32)",accent:"#d4af8a",accent2:"#b89060",text:"#f0e0d0",
-   cover:{bg:"linear-gradient(135deg,#1a0f18,#351e32)",ac:"#d4af8a",tc:"#f0e0d0",layout:"noir"}},
+   cover:{bg:"linear-gradient(135deg,#1a0f18,#351e32)",ac:"#d4af8a",tc:"#f0e0d0",layout:"corner-bracket"}},
   {id:50,name:"Film Noir",category:"vintage",emoji:"🎞️",font:"Archivo Black",
    bg:"linear-gradient(135deg,#050505,#0f0f0f,#151515)",accent:"#c8c8c8",accent2:"#999999",text:"#e8e8e8",
    cover:{bg:"linear-gradient(135deg,#050505,#151515)",ac:"#c8c8c8",tc:"#e8e8e8",layout:"noir"}},
@@ -1357,7 +1363,7 @@ const TEMPLATES = [
    cover:{bg:"linear-gradient(135deg,#fff9c4,#fff3a0)",ac:"#1a1a1a",tc:"#1a1a1a",dark:true,layout:"comic"}},
   {id:55,name:"Graffiti Street",category:"artistic",emoji:"🎭",font:"Bebas Neue",
    bg:"linear-gradient(135deg,#0f0f0f,#151515,#1a1a1a)",accent:"#ffff00",accent2:"#ff6600",text:"#ffffff",
-   cover:{bg:"linear-gradient(135deg,#0f0f0f,#1a1a1a)",ac:"#ffff00",tc:"#ffffff",layout:"bold-type"}},
+   cover:{bg:"linear-gradient(135deg,#0f0f0f,#1a1a1a)",ac:"#ffff00",tc:"#ffffff",layout:"diagonal-split"}},
   {id:56,name:"Studio Ghibli",category:"artistic",emoji:"🌻",font:"Nunito",
    bg:"linear-gradient(135deg,#e8f5e9,#f3e5f5)",accent:"#558b2f",accent2:"#33691e",text:"#1b5e20",
    cover:{bg:"linear-gradient(135deg,#e8f5e9,#f3e5f5)",ac:"#558b2f",tc:"#1b5e20",dark:true,layout:"petal"}},
@@ -1376,31 +1382,31 @@ const TEMPLATES = [
   // ── CORPORATE (61-70) ──
   {id:61,name:"Executive Blue",category:"corporate",emoji:"💼",font:"Poppins",
    bg:"linear-gradient(135deg,#0a192f,#112240,#1a3050)",accent:"#64ffda",accent2:"#43c5a0",text:"#ccd6f6",
-   cover:{bg:"linear-gradient(135deg,#0a192f,#1a3050)",ac:"#64ffda",tc:"#ccd6f6",layout:"card-left"}},
+   cover:{bg:"linear-gradient(135deg,#0a192f,#1a3050)",ac:"#64ffda",tc:"#ccd6f6",layout:"letter-mark"}},
   {id:62,name:"Law Firm",category:"corporate",emoji:"⚖️",font:"Cormorant Garamond",
    bg:"linear-gradient(135deg,#f5f0e8,#ede5d5)",accent:"#1a237e",accent2:"#283593",text:"#1a1a1a",
-   cover:{bg:"linear-gradient(135deg,#f5f0e8,#ede5d5)",ac:"#1a237e",tc:"#1a1a1a",dark:true,layout:"serif-editorial"}},
+   cover:{bg:"linear-gradient(135deg,#f5f0e8,#ede5d5)",ac:"#1a237e",tc:"#1a1a1a",dark:true,layout:"letter-mark"}},
   {id:63,name:"Finance Pro",category:"corporate",emoji:"📈",font:"Inter",
    bg:"linear-gradient(135deg,#001524,#002035,#003048)",accent:"#00b4d8",accent2:"#0077b6",text:"#d0e8f0",
-   cover:{bg:"linear-gradient(135deg,#001524,#003048)",ac:"#00b4d8",tc:"#d0e8f0",layout:"blueprint"}},
+   cover:{bg:"linear-gradient(135deg,#001524,#003048)",ac:"#00b4d8",tc:"#d0e8f0",layout:"grid-mosaic"}},
   {id:64,name:"Consulting Elite",category:"corporate",emoji:"🏆",font:"Josefin Sans",
    bg:"linear-gradient(135deg,#fafafa,#f0f0f0)",accent:"#c9a84c",accent2:"#a87c20",text:"#1a1a1a",
    cover:{bg:"linear-gradient(135deg,#fafafa,#f0f0f0)",ac:"#c9a84c",tc:"#1a1a1a",dark:true,layout:"deco"}},
   {id:65,name:"Tech CEO",category:"corporate",emoji:"🧑‍💻",font:"Space Grotesk",
    bg:"linear-gradient(135deg,#0f0f0f,#1a1a1a,#222222)",accent:"#3ecf8e",accent2:"#29a871",text:"#ffffff",
-   cover:{bg:"linear-gradient(135deg,#0f0f0f,#222222)",ac:"#3ecf8e",tc:"#ffffff",layout:"terminal"}},
+   cover:{bg:"linear-gradient(135deg,#0f0f0f,#222222)",ac:"#3ecf8e",tc:"#ffffff",layout:"top-banner"}},
   {id:66,name:"Medical Pro",category:"corporate",emoji:"🏥",font:"DM Sans",
    bg:"linear-gradient(135deg,#f0f8ff,#e6f3ff)",accent:"#0066cc",accent2:"#0052a3",text:"#1a2a3a",
-   cover:{bg:"linear-gradient(135deg,#f0f8ff,#e6f3ff)",ac:"#0066cc",tc:"#1a2a3a",dark:true,layout:"elegant-top"}},
+   cover:{bg:"linear-gradient(135deg,#f0f8ff,#e6f3ff)",ac:"#0066cc",tc:"#1a2a3a",dark:true,layout:"resume-card"}},
   {id:67,name:"Academic",category:"corporate",emoji:"🎓",font:"Libre Baskerville",
    bg:"linear-gradient(135deg,#1a0a00,#2e1800,#3d2200)",accent:"#d4a017",accent2:"#b38b00",text:"#f5e8c0",
-   cover:{bg:"linear-gradient(135deg,#1a0a00,#3d2200)",ac:"#d4a017",tc:"#f5e8c0",layout:"serif-editorial"}},
+   cover:{bg:"linear-gradient(135deg,#1a0a00,#3d2200)",ac:"#d4a017",tc:"#f5e8c0",layout:"resume-card"}},
   {id:68,name:"Startup Pitch",category:"corporate",emoji:"💡",font:"Syne",
    bg:"linear-gradient(135deg,#0d0d0d,#151515,#1a1a1a)",accent:"#ff4444",accent2:"#cc2200",text:"#ffffff",
-   cover:{bg:"linear-gradient(135deg,#0d0d0d,#1a1a1a)",ac:"#ff4444",tc:"#ffffff",layout:"bold-type"}},
+   cover:{bg:"linear-gradient(135deg,#0d0d0d,#1a1a1a)",ac:"#ff4444",tc:"#ffffff",layout:"stacked-bars"}},
   {id:69,name:"Diplomat",category:"corporate",emoji:"🌐",font:"Cinzel",
    bg:"linear-gradient(135deg,#f0ede6,#e8e4d8)",accent:"#2c5f2e",accent2:"#1e4020",text:"#1a1a0a",
-   cover:{bg:"linear-gradient(135deg,#f0ede6,#e8e4d8)",ac:"#2c5f2e",tc:"#1a1a0a",dark:true,layout:"zen"}},
+   cover:{bg:"linear-gradient(135deg,#f0ede6,#e8e4d8)",ac:"#2c5f2e",tc:"#1a1a0a",dark:true,layout:"corner-bracket"}},
   {id:70,name:"Brand Identity",category:"corporate",emoji:"🎯",font:"Poppins",
    bg:"linear-gradient(135deg,#ff6b35,#f7c59f)",accent:"#1a1a1a",accent2:"#333",text:"#1a1a1a",
    cover:{bg:"linear-gradient(135deg,#ff6b35,#f7c59f)",ac:"#1a1a1a",tc:"#1a1a1a",dark:true,layout:"split-diagonal"}},
@@ -1410,66 +1416,66 @@ const TEMPLATES = [
    cover:{bg:"linear-gradient(135deg,#ff9ff3,#a29bfe)",ac:"#6c5ce7",tc:"#2d3436",dark:true,layout:"fun-sticker"}},
   {id:72,name:"Bubble Gum",category:"playful",emoji:"🫧",font:"Nunito",
    bg:"linear-gradient(135deg,#fce4ec,#f8bbd0)",accent:"#e91e63",accent2:"#c2185b",text:"#4a0020",
-   cover:{bg:"linear-gradient(135deg,#fce4ec,#f8bbd0)",ac:"#e91e63",tc:"#4a0020",dark:true,layout:"petal"}},
+   cover:{bg:"linear-gradient(135deg,#fce4ec,#f8bbd0)",ac:"#e91e63",tc:"#4a0020",dark:true,layout:"floating-card"}},
   {id:73,name:"Emoji World",category:"playful",emoji:"🌟",font:"Comfortaa",
    bg:"linear-gradient(135deg,#e8f5e9,#fff9c4,#e3f2fd)",accent:"#ff6f00",accent2:"#e65100",text:"#1a1a1a",
-   cover:{bg:"linear-gradient(135deg,#e8f5e9,#e3f2fd)",ac:"#ff6f00",tc:"#1a1a1a",dark:true,layout:"fun-sticker"}},
+   cover:{bg:"linear-gradient(135deg,#e8f5e9,#e3f2fd)",ac:"#ff6f00",tc:"#1a1a1a",dark:true,layout:"tag-cloud"}},
   {id:74,name:"Pixel Party",category:"playful",emoji:"👾",font:"Press Start 2P",
    bg:"linear-gradient(135deg,#1a0040,#240060,#300080)",accent:"#ffff00",accent2:"#00ffff",text:"#ffffff",
-   cover:{bg:"linear-gradient(135deg,#1a0040,#300080)",ac:"#ffff00",tc:"#ffffff",layout:"terminal"}},
+   cover:{bg:"linear-gradient(135deg,#1a0040,#300080)",ac:"#ffff00",tc:"#ffffff",layout:"grid-mosaic"}},
   {id:75,name:"Rainbow Maker",category:"playful",emoji:"🌈",font:"Righteous",
    bg:"linear-gradient(135deg,#ff0844,#ffb199)",accent:"#ffffff",accent2:"#f0f0f0",text:"#ffffff",
-   cover:{bg:"linear-gradient(135deg,#ff0844,#ffb199)",ac:"#ffffff",tc:"#ffffff",layout:"retro-wave"}},
+   cover:{bg:"linear-gradient(135deg,#ff0844,#ffb199)",ac:"#ffffff",tc:"#ffffff",layout:"dual-tone"}},
   {id:76,name:"Kawaii",category:"playful",emoji:"🎀",font:"Comfortaa",
    bg:"linear-gradient(135deg,#fce4f0,#f8d7ea,#ffe0ee)",accent:"#ff80ab",accent2:"#f50057",text:"#4a0030",
-   cover:{bg:"linear-gradient(135deg,#fce4f0,#ffe0ee)",ac:"#ff80ab",tc:"#4a0030",dark:true,layout:"petal"}},
+   cover:{bg:"linear-gradient(135deg,#fce4f0,#ffe0ee)",ac:"#ff80ab",tc:"#4a0030",dark:true,layout:"floating-card"}},
   {id:77,name:"80s Arcade",category:"playful",emoji:"🕹️",font:"Press Start 2P",
    bg:"linear-gradient(135deg,#000000,#050510)",accent:"#ff3300",accent2:"#cc2200",text:"#ffff00",
    cover:{bg:"linear-gradient(135deg,#000000,#050510)",ac:"#ff3300",tc:"#ffff00",layout:"glitch-lines"}},
   {id:78,name:"Confetti",category:"playful",emoji:"🎉",font:"Nunito",
    bg:"linear-gradient(135deg,#fff9c4,#fffde7)",accent:"#ff6f00",accent2:"#e65100",text:"#1a1a00",
-   cover:{bg:"linear-gradient(135deg,#fff9c4,#fffde7)",ac:"#ff6f00",tc:"#1a1a00",dark:true,layout:"fun-sticker"}},
+   cover:{bg:"linear-gradient(135deg,#fff9c4,#fffde7)",ac:"#ff6f00",tc:"#1a1a00",dark:true,layout:"tag-cloud"}},
   {id:79,name:"Cartoon Hero",category:"playful",emoji:"🦸",font:"Righteous",
    bg:"linear-gradient(135deg,#1565c0,#0d47a1,#0a3880)",accent:"#ffea00",accent2:"#ffc200",text:"#ffffff",
-   cover:{bg:"linear-gradient(135deg,#1565c0,#0a3880)",ac:"#ffea00",tc:"#ffffff",layout:"bold-type"}},
+   cover:{bg:"linear-gradient(135deg,#1565c0,#0a3880)",ac:"#ffea00",tc:"#ffffff",layout:"dual-tone"}},
   {id:80,name:"Neon Circus",category:"playful",emoji:"🎪",font:"Pacifico",
    bg:"linear-gradient(135deg,#1a0030,#2d0050,#3d0070)",accent:"#ff6bff",accent2:"#dd44dd",text:"#ffe0ff",
    cover:{bg:"linear-gradient(135deg,#1a0030,#3d0070)",ac:"#ff6bff",tc:"#ffe0ff",layout:"neon-frame"}},
   // ── OCEAN (81-90) ──
   {id:81,name:"Deep Sea",category:"ocean",emoji:"🌊",font:"Exo 2",
    bg:"linear-gradient(135deg,#000d1a,#001a2e,#002040)",accent:"#00b4d8",accent2:"#0096c7",text:"#caf0f8",
-   cover:{bg:"linear-gradient(135deg,#000d1a,#002040)",ac:"#00b4d8",tc:"#caf0f8",layout:"wave-bottom"}},
+   cover:{bg:"linear-gradient(135deg,#000d1a,#002040)",ac:"#00b4d8",tc:"#caf0f8",layout:"sidebar-accent"}},
   {id:82,name:"Coral Reef",category:"ocean",emoji:"🐠",font:"Nunito",
    bg:"linear-gradient(135deg,#001520,#002030,#003040)",accent:"#ff6b6b",accent2:"#ff4757",text:"#f0ffff",
    cover:{bg:"linear-gradient(135deg,#001520,#003040)",ac:"#ff6b6b",tc:"#f0ffff",layout:"wave-bottom"}},
   {id:83,name:"Mermaid Lagoon",category:"ocean",emoji:"🧜",font:"Pacifico",
    bg:"linear-gradient(135deg,#00251a,#003d2e,#005040)",accent:"#64ffda",accent2:"#40e0aa",text:"#e0fff8",
-   cover:{bg:"linear-gradient(135deg,#00251a,#005040)",ac:"#64ffda",tc:"#e0fff8",layout:"organic"}},
+   cover:{bg:"linear-gradient(135deg,#00251a,#005040)",ac:"#64ffda",tc:"#e0fff8",layout:"sidebar-accent"}},
   {id:84,name:"Storm Tide",category:"ocean",emoji:"⛈️",font:"Chakra Petch",
    bg:"linear-gradient(135deg,#050a18,#0a1020,#0f1828)",accent:"#7ecef4",accent2:"#5ab4e8",text:"#d8f0ff",
-   cover:{bg:"linear-gradient(135deg,#050a18,#0f1828)",ac:"#7ecef4",tc:"#d8f0ff",layout:"blueprint"}},
+   cover:{bg:"linear-gradient(135deg,#050a18,#0f1828)",ac:"#7ecef4",tc:"#d8f0ff",layout:"stacked-bars"}},
   {id:85,name:"Sunset Surf",category:"ocean",emoji:"🏄",font:"Comfortaa",
    bg:"linear-gradient(135deg,#1a0a20,#2a1030,#3a1840)",accent:"#ff9a9e",accent2:"#fad0c4",text:"#ffe8f0",
    cover:{bg:"linear-gradient(135deg,#1a0a20,#3a1840)",ac:"#ff9a9e",tc:"#ffe8f0",layout:"wave-bottom"}},
   {id:86,name:"Bioluminescent",category:"ocean",emoji:"🦑",font:"Orbitron",
    bg:"linear-gradient(135deg,#000510,#000a20,#000f2e)",accent:"#39ff14",accent2:"#2acc10",text:"#d0ffcc",
-   cover:{bg:"linear-gradient(135deg,#000510,#000f2e)",ac:"#39ff14",tc:"#d0ffcc",layout:"neon-frame"}},
+   cover:{bg:"linear-gradient(135deg,#000510,#000f2e)",ac:"#39ff14",tc:"#d0ffcc",layout:"radial-burst"}},
   {id:87,name:"Arctic Ocean",category:"ocean",emoji:"🐋",font:"Space Grotesk",
    bg:"linear-gradient(135deg,#e8f4f8,#d8ecf5)",accent:"#0077b6",accent2:"#005f99",text:"#023e8a",
-   cover:{bg:"linear-gradient(135deg,#e8f4f8,#d8ecf5)",ac:"#0077b6",tc:"#023e8a",dark:true,layout:"elegant-top"}},
+   cover:{bg:"linear-gradient(135deg,#e8f4f8,#d8ecf5)",ac:"#0077b6",tc:"#023e8a",dark:true,layout:"centered-badge"}},
   {id:88,name:"Pearl Diver",category:"ocean",emoji:"🤿",font:"DM Sans",
    bg:"linear-gradient(135deg,#f0faf5,#e0f5ee)",accent:"#0f5e6e",accent2:"#0a4a58",text:"#0a2a30",
-   cover:{bg:"linear-gradient(135deg,#f0faf5,#e0f5ee)",ac:"#0f5e6e",tc:"#0a2a30",dark:true,layout:"minimal-line"}},
+   cover:{bg:"linear-gradient(135deg,#f0faf5,#e0f5ee)",ac:"#0f5e6e",tc:"#0a2a30",dark:true,layout:"arc-header"}},
   {id:89,name:"Midnight Whale",category:"ocean",emoji:"🐳",font:"Josefin Sans",
    bg:"linear-gradient(135deg,#010d1a,#011a2e,#012040)",accent:"#90e0ef",accent2:"#48cae4",text:"#caf0f8",
    cover:{bg:"linear-gradient(135deg,#010d1a,#012040)",ac:"#90e0ef",tc:"#caf0f8",layout:"orbit"}},
   {id:90,name:"Tidal Wave",category:"ocean",emoji:"🌀",font:"Exo 2",
    bg:"linear-gradient(135deg,#001433,#002050,#002d6b)",accent:"#4cc9f0",accent2:"#4361ee",text:"#d0e8ff",
-   cover:{bg:"linear-gradient(135deg,#001433,#002d6b)",ac:"#4cc9f0",tc:"#d0e8ff",layout:"holo"}},
+   cover:{bg:"linear-gradient(135deg,#001433,#002d6b)",ac:"#4cc9f0",tc:"#d0e8ff",layout:"top-banner"}},
   // ── SCI-FI (91-100) ──
   {id:91,name:"Cyberspace",category:"scifi",emoji:"🚀",font:"Orbitron",
    bg:"linear-gradient(135deg,#000010,#00002a,#000040)",accent:"#00ff99",accent2:"#00cc77",text:"#d0ffee",
-   cover:{bg:"linear-gradient(135deg,#000010,#000040)",ac:"#00ff99",tc:"#d0ffee",layout:"terminal"}},
+   cover:{bg:"linear-gradient(135deg,#000010,#000040)",ac:"#00ff99",tc:"#d0ffee",layout:"neon-grid"}},
   {id:92,name:"Alien Contact",category:"scifi",emoji:"👽",font:"Chakra Petch",
    bg:"linear-gradient(135deg,#001500,#002800,#003300)",accent:"#7fff00",accent2:"#5dd300",text:"#d0ffd0",
    cover:{bg:"linear-gradient(135deg,#001500,#003300)",ac:"#7fff00",tc:"#d0ffd0",layout:"glitch-lines"}},
@@ -1481,22 +1487,22 @@ const TEMPLATES = [
    cover:{bg:"linear-gradient(135deg,#030a20,#0a2050)",ac:"#a78bfa",tc:"#ede0ff",layout:"blueprint"}},
   {id:95,name:"Android Dreams",category:"scifi",emoji:"🤖",font:"Russo One",
    bg:"linear-gradient(135deg,#080808,#101010,#181818)",accent:"#ffffff",accent2:"#cccccc",text:"#ffffff",
-   cover:{bg:"linear-gradient(135deg,#080808,#181818)",ac:"#ffffff",tc:"#ffffff",layout:"holo"}},
+   cover:{bg:"linear-gradient(135deg,#080808,#181818)",ac:"#ffffff",tc:"#ffffff",layout:"dark-glass"}},
   {id:96,name:"Warp Drive",category:"scifi",emoji:"🌌",font:"Orbitron",
    bg:"linear-gradient(135deg,#000005,#00000f,#000020)",accent:"#4fc3f7",accent2:"#0288d1",text:"#e0f0ff",
-   cover:{bg:"linear-gradient(135deg,#000005,#000020)",ac:"#4fc3f7",tc:"#e0f0ff",layout:"orbit"}},
+   cover:{bg:"linear-gradient(135deg,#000005,#000020)",ac:"#4fc3f7",tc:"#e0f0ff",layout:"tri-panel"}},
   {id:97,name:"Nano Tech",category:"scifi",emoji:"🧬",font:"Chakra Petch",
    bg:"linear-gradient(135deg,#001010,#001a1a,#002828)",accent:"#00e5ff",accent2:"#00b2cc",text:"#d0fffe",
-   cover:{bg:"linear-gradient(135deg,#001010,#002828)",ac:"#00e5ff",tc:"#d0fffe",layout:"terminal"}},
+   cover:{bg:"linear-gradient(135deg,#001010,#002828)",ac:"#00e5ff",tc:"#d0fffe",layout:"neon-grid"}},
   {id:98,name:"Time Traveler",category:"scifi",emoji:"⏳",font:"Bebas Neue",
    bg:"linear-gradient(135deg,#0a0505,#150808,#200a0a)",accent:"#ff4444",accent2:"#dd2222",text:"#ffe0e0",
-   cover:{bg:"linear-gradient(135deg,#0a0505,#200a0a)",ac:"#ff4444",tc:"#ffe0e0",layout:"glitch-lines"}},
+   cover:{bg:"linear-gradient(135deg,#0a0505,#200a0a)",ac:"#ff4444",tc:"#ffe0e0",layout:"tri-panel"}},
   {id:99,name:"Multiverse",category:"scifi",emoji:"🔀",font:"Exo 2",
    bg:"linear-gradient(135deg,#0a0015,#15002a,#1e0040)",accent:"#e040fb",accent2:"#aa00ff",text:"#f5e6ff",
    cover:{bg:"linear-gradient(135deg,#0a0015,#1e0040)",ac:"#e040fb",tc:"#f5e6ff",layout:"pulse-ring"}},
   {id:100,name:"Omega Protocol",category:"scifi",emoji:"💠",font:"Russo One",
    bg:"linear-gradient(135deg,#001a10,#002a18,#003520)",accent:"#00ff88",accent2:"#00cc66",text:"#d0ffe8",
-   cover:{bg:"linear-gradient(135deg,#001a10,#003520)",ac:"#00ff88",tc:"#d0ffe8",layout:"bold-type"}},
+   cover:{bg:"linear-gradient(135deg,#001a10,#003520)",ac:"#00ff88",tc:"#d0ffe8",layout:"diagonal-split"}},
 ];
 
 const CATEGORIES = [
@@ -1818,7 +1824,7 @@ function renderCover(t, container) {
     }
     case 'letter-mark': {
       cover = mkDiv({...shared, alignItems:'center', justifyContent:'center', gap:'10px', padding:'16px'});
-      const initials = 'BS';
+      const initials = demoName.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
       cover.innerHTML = `<div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,${ac},${ac}88);display:flex;align-items:center;justify-content:center;font-family:${f};font-size:22px;font-weight:900;color:${isDark?'#000':'#fff'};letter-spacing:-1px;box-shadow:0 8px 24px ${ac}55">${initials}</div><div style="text-align:center"><div style="font-family:${f};font-size:13px;font-weight:700;color:${tc}">${demoName}</div><div style="font-size:7.5px;color:${ac};letter-spacing:2px;text-transform:uppercase;margin-top:3px">${demoRole}</div></div><div style="height:1px;width:40px;background:${ac}55"></div><div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center">${['React','Node','UI','AWS'].map(s=>`<span style="font-size:7px;color:${tc}66">${s}</span>`).join(` <span style="font-size:7px;color:${ac}55">·</span> `)}</div><div style="font-size:6.5px;color:${tc}33;font-family:${f};letter-spacing:1px;text-transform:uppercase">${t.name}</div>`;
       break;
     }
@@ -2073,39 +2079,12 @@ function addCoverAnimations(t, cover) {
   }
 }
 
-const COVER_LAYOUTS = {
-  // COSMIC (1-10)
-  1:'cosmic',        2:'pulse-ring',     3:'radial-burst',  4:'orbit',         5:'dark-glass',
-  6:'neon-grid',     7:'neon-frame',     8:'hexagon',       9:'bold-type',     10:'corner-bracket',
-  // NATURE (11-20)
-  11:'organic',      12:'petal',         13:'wave-bottom',  14:'serif-editorial', 15:'zen',
-  16:'arc-header',   17:'floating-card', 18:'card-left',    19:'minimal-line', 20:'stacked-bars',
-  // TECH/NEON (21-30)
-  21:'neon-frame',   22:'terminal',      23:'neon-grid',    24:'bold-type',    25:'holo',
-  26:'retro-wave',   27:'glitch-lines',  28:'blueprint',    29:'letter-mark',  30:'dual-tone',
-  // MINIMAL (31-40)
-  31:'minimal-center',32:'card-left',   33:'swiss',        34:'zen',          35:'corner-bracket',
-  36:'sidebar-accent',37:'tri-panel',   38:'top-banner',   39:'newspaper',    40:'resume-card',
-  // VINTAGE (41-50)
-  41:'vintage-stamp',42:'newspaper',    43:'record',       44:'hollywood',    45:'polaroid',
-  46:'typewriter',   47:'serif-editorial',48:'deco',       49:'tag-cloud',    50:'noir',
-  // ARTISTIC (51-60)
-  51:'watercolor',   52:'diagonal-split',53:'grid-mosaic', 54:'comic',        55:'letter-mark',
-  56:'organic',      57:'arc-header',   58:'floating-card',59:'radial-burst', 60:'swiss',
-  // CORPORATE (61-70)
-  61:'top-banner',   62:'resume-card',  63:'blueprint',    64:'deco',         65:'sidebar-accent',
-  66:'stacked-bars', 67:'serif-editorial',68:'bold-type',  69:'tri-panel',    70:'split-diagonal',
-  // PLAYFUL (71-80)
-  71:'fun-sticker',  72:'petal',        73:'tag-cloud',    74:'terminal',     75:'wave-bottom',
-  76:'comic',        77:'retro-wave',   78:'grid-mosaic',  79:'bold-type',    80:'neon-frame',
-  // OCEAN (81-90)
-  81:'wave-bottom',  82:'arc-header',   83:'organic',      84:'blueprint',    85:'dual-tone',
-  86:'neon-grid',    87:'minimal-center',88:'floating-card',89:'orbit',       90:'holo',
-  // SCI-FI (91-100)
-  91:'terminal',     92:'corner-bracket',93:'cosmic',      94:'dark-glass',   95:'letter-mark',
-  96:'radial-burst', 97:'glitch-lines', 98:'diagonal-split',99:'pulse-ring',  100:'stacked-bars',
-};
-TEMPLATES.forEach(t => { t.cover.layout = COVER_LAYOUTS[t.id] || 'minimal-center'; });
+// NOTE: each template's cover.layout is defined inline above, intentionally matched
+// to its theme (e.g. "80s Arcade" -> glitch-lines, "Terminal Dark" -> terminal).
+// A COVER_LAYOUTS id-range override table used to live here and clobbered those
+// intentional values for ~50 of the 100 templates, causing covers/generated output
+// to not match the template's actual design. Removed so each template keeps its
+// own correct layout.
 
 </script>
 <script>
